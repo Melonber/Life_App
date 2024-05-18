@@ -68,7 +68,7 @@ const WeekMatrixPage = ({ route }) => {
       <Text style={styles.textVertical}>Age</Text>
       <View style={styles.content}>
         <Text style={styles.textHorizontal}>Weeks in 1 year</Text>
-        <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <ScrollView scrollEnabled={false} contentContainerStyle={styles.scrollContainer}>
           <View style={styles.matrixContainer}>
             {renderMatrix()}
           </View>
