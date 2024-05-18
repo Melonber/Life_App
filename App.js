@@ -5,7 +5,7 @@ import GridGraph from './GridGraph';
 export default function App() {
   return (
     <View style={styles.container}>
-      <GridGraph/>
+    <GridGraph/>
     </View>
   );
 }
