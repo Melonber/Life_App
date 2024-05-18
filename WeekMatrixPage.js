@@ -23,6 +23,9 @@ const WeekMatrixPage = ({ route }) => {
     const matrix = Array.from({ length: 75 }, () =>
       Array.from({ length: 52 }, () => '🟩')
     );
+    const lastRow = matrix.length - 1;
+    const lastColumn = matrix[0].length - 1;
+    matrix[lastRow][lastColumn] = '🟧';
 
     if (diffInWeeks > 0) {
       for (let i = 0; i < diffInWeeks + 1092; i++) {
@@ -71,6 +74,8 @@ const WeekMatrixPage = ({ route }) => {
           </View>
         </ScrollView>
       </View>
+      <Text style={{top:516,left:370, position: 'absolute',}}>75 y.o.</Text>
+      <Text style={{width:400,top:600, position: 'absolute', fontSize:20,textAlign:'center'}}>Green squares shows how much fully free time u have for living till 75 years old. Red squares is time that u already lived + 1/3 of your whole life that will be "wasted"(sleeping, eating, hygiene, waiting in a red light and etc.)</Text>
     </View>
   );
 };
@@ -89,7 +94,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    top:-150
+    top:-120
   },
   
   matrixContainer: {
@@ -106,8 +111,9 @@ const styles = StyleSheet.create({
     transform: [{ rotate: '270deg' }],
     position: 'absolute',
     top: '50%',
-    left: 0,
-    marginTop: -250,
+    left: 4,
+    marginTop: -150,
+    fontSize:10
   },
   orderNumber: {
     position: 'absolute',
@@ -117,7 +123,8 @@ const styles = StyleSheet.create({
   },
   textHorizontal: {
     textAlign: 'center',
-    top: 10, // Установите здесь 1 пиксель
+    top: 30,
+    fontSize:10
   },
 });
 
